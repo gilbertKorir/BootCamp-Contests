@@ -40,7 +40,7 @@
     <ListView
         android:id="@+id/listContests"
         android:layout_width="0dp"
-        android:layout_height="800dp"
+        android:layout_height="950dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="200dp"
         android:layout_marginEnd="8dp"
@@ -50,7 +50,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewSchool"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintVertical_bias="0.279" />
 
     <TextView
         android:id="@+id/textView3"
