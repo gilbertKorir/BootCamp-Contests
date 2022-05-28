@@ -36,6 +36,7 @@
         android:ems="10"
         android:gravity="center"
         android:hint="Your password"
+        android:inputType="textPassword"
         android:textColor="#F8F5F5"
         android:textSize="24sp"
         android:textStyle="italic"
