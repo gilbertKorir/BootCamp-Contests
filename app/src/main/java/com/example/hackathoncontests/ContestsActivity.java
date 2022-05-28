@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import Adapters.ContestAdapter;
 import butterknife.BindView;
@@ -43,5 +47,15 @@ public class ContestsActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listContests);
         ContestAdapter contestAdapter = new ContestAdapter(getApplicationContext(),contestList,contestImages);
         listView.setAdapter(contestAdapter);
+
+        mViewContests.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String contests = ((TextView)view).getText().toString();
+                Log.v("RestaurantsActivity", "In the onItemClickListener!");
+                Toast.makeText(ContestsActivity.this, contests, Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 }
