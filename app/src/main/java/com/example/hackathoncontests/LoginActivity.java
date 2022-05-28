@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if(v == mSubmitButton){
-            //captue the user data
+            //capture the user input data
             String name = mName.getText().toString();
             String school = mSchool.getText().toString();
             String password = mPassword.getText().toString();
@@ -41,6 +41,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             intent.putExtra("name", name);
             intent.putExtra("school", school);
             intent.putExtra("password", password);
+
+            startActivity(intent);
         }
 
     }
