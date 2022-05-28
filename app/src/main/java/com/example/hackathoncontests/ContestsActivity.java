@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,19 +42,20 @@ public class ContestsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         String school = intent.getStringExtra("school");
-        mViewname.setText(name);
-        mViewSchool.setText(school);
+        mViewname.setText("Your name: " + name);
+        mViewSchool.setText("Your School: " + school);
 
         listView = (ListView) findViewById(R.id.listContests);
         ContestAdapter contestAdapter = new ContestAdapter(getApplicationContext(),contestList,contestImages);
         listView.setAdapter(contestAdapter);
 
-        mViewContests.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String contests = ((TextView)view).getText().toString();
-                Log.v("RestaurantsActivity", "In the onItemClickListener!");
-                Toast.makeText(ContestsActivity.this, contests, Toast.LENGTH_LONG).show();
+//                int image = ((ImageView)view).getId();
+//                Log.d("ContestsActivity", "In the onItemClickListener!");
+                Toast.makeText(ContestsActivity.this, contests,  Toast.LENGTH_LONG).show();
             }
         });
 
