@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -31,19 +32,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        if(v == mSubmitButton){
-            //capture the user input data
-            String name = mName.getText().toString();
-            String school = mSchool.getText().toString();
-            String password = mPassword.getText().toString();
+            if(TextUtils.isEmpty(mName.getText().toString())){
+                mName.setError("Name is Required");
+            } else if(TextUtils.isEmpty(mSchool.getText().toString())){
+                mSchool.setError("School is Required");
+            }else if(TextUtils.isEmpty(mPassword.getText().toString())){
+                mPassword.setError("Name is Required");
+            }else {
+                //capture the user input data
+                String name = mName.getText().toString();
+                String school = mSchool.getText().toString();
+                String password = mPassword.getText().toString();
 
-            Intent intent = new Intent(LoginActivity.this, ContestsActivity.class);
-            intent.putExtra("name", name);
-            intent.putExtra("school", school);
-            intent.putExtra("password", password);
+                Intent intent = new Intent(LoginActivity.this, ContestsActivity.class);
+                intent.putExtra("name", name);
+                intent.putExtra("school", school);
+                intent.putExtra("password", password);
 
-            startActivity(intent);
-        }
-
+                startActivity(intent);
+            }
     }
 }
