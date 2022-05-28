@@ -12,9 +12,16 @@ public class ContestAdapter extends BaseAdapter {
     int listImages[];
     LayoutInflater inflater;
 
+    public ContestAdapter(Context ctx, String[] listContest, int[] listImages) {
+        this.context = ctx;
+        this.listContest = listContest;
+        this.listImages = listImages;
+        inflater = LayoutInflater.from(ctx);
+    }
+
     @Override
     public int getCount() {
-        return 0;
+        return listContest.length;
     }
 
     @Override
