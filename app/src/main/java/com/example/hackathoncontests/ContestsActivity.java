@@ -2,6 +2,7 @@ package com.example.hackathoncontests;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.ListView;
@@ -32,6 +33,13 @@ public class ContestsActivity extends AppCompatActivity {
         getSupportActionBar().hide(); //hide the title bar
         setContentView(R.layout.activity_contests);
         ButterKnife.bind(this);
+
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        String school = intent.getStringExtra("school");
+        mViewname.setText(name);
+        mViewSchool.setText(school);
+
         listView = (ListView) findViewById(R.id.listContests);
         ContestAdapter contestAdapter = new ContestAdapter(getApplicationContext(),contestList,contestImages);
         listView.setAdapter(contestAdapter);
