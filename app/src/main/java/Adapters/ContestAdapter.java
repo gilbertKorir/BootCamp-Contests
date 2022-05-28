@@ -5,6 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.hackathoncontests.R;
 
 public class ContestAdapter extends BaseAdapter {
     Context context;
@@ -36,6 +40,11 @@ public class ContestAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        convertView = inflater.inflate(R.layout.activity_custom_list_view, null);
+        TextView txtview = (TextView) convertView.findViewById(R.id.textviewcontest);
+        ImageView contestimg = (ImageView) convertView.findViewById(R.id.imageIcon);
+        txtview.setText(listContest[position]);
+        contestimg.setImageResource(listImages[position]);
+        return convertView;
     }
 }
