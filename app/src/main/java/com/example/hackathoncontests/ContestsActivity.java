@@ -52,10 +52,7 @@ public class ContestsActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String contests = ((TextView)view).getText().toString();
-//                int image = ((ImageView)view).getId();
-//                Log.d("ContestsActivity", "In the onItemClickListener!");
-                Toast.makeText(ContestsActivity.this, contests,  Toast.LENGTH_LONG).show();
+                Toast.makeText(ContestsActivity.this, "This contest is still available available",  Toast.LENGTH_LONG).show();
             }
         });
 
