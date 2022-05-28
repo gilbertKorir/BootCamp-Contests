@@ -33,7 +33,7 @@ public class ContestsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contests);
         ButterKnife.bind(this);
         listView = (ListView) findViewById(R.id.listContests);
-
-        ContestAdapter adapter = new ContestAdapter(this, android.R.layout.simple_list_item_1, contestList, contestImages);
+        ContestAdapter contestAdapter = new ContestAdapter(getApplicationContext(),contestList,contestImages);
+        listView.setAdapter(contestAdapter);
     }
 }
