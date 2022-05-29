@@ -3,7 +3,9 @@ package com.example.hackathoncontests;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
@@ -23,6 +25,7 @@ public class LoginActivityInstrumentationTest {
         onView(withId(R.id.schoolEditText)).perform(typeText(school));
         onView(withId(R.id.passwordEditText)).perform(typeText(password));
         onView(withId(R.id.submitButton)).perform(click());
-        onView(withId(R.id.locationTextView)).check(matches(withText("Here are all the restaurants near: " + location)));
+        onView(withId(R.id.viewName)).check(matches(withText("Your Name: " + name)));
+        onView(withId(R.id.viewSchool)).check(matches(withText("Your School: " + school)));
     }
 }
