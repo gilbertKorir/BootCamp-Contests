@@ -17,7 +17,7 @@ public class LoginActivityInstrumentationTest {
     public ActivityScenarioRule<LoginActivity> activityRule = new ActivityScenarioRule<>(LoginActivity.class);
 
     @Test
-    public void locationIsSentToRestaurantsActivity() {
+    public void loginIsSentToContestActivity() {
         String name = "Korir";
         String school = "Moringa";
         String password = "korir12";
