@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 @RunWith(AndroidJUnit4.class)
-class ExampleUniteTest {
+class ExampleInstrumentedTest {
 
 //    private lateinit var scenario: ActivityScenario<MainActivity>
     @Test
