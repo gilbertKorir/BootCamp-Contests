@@ -27,16 +27,5 @@ public class MainActivityInstrumentationTest {
     public void validateRegisterButton() {
         onView(withId(R.id.registerButton)).perform(click());
     }
-    @Test
-    public void loginIsSentToContestActivity() {
-        String name = "Korir";
-        String school = "Moringa";
-        String password = "korir12";
-        onView(withId(R.id.nameEditText)).perform(typeText(name));
-        onView(withId(R.id.schoolEditText)).perform(typeText(school));
-        onView(withId(R.id.passwordEditText)).perform(typeText(password));
-        onView(withId(R.id.submitButton)).perform(click());
-        onView(withId(R.id.viewName)).check(matches(withText("Your Name: " + name)));
-        onView(withId(R.id.viewSchool)).check(matches(withText("Your School: " + school)));
-    }
+
 }
