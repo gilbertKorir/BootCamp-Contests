@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ls2"
-    tools:context=".ui.ContestsActivity">
 
+    tools:context=".ui.ContestsActivity">
+<!--    android:background="@drawable/ls2"-->
     <TextView
         android:id="@+id/viewName"
         android:layout_width="0dp"
@@ -35,23 +35,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewName" />
 
-    <ListView
-        android:id="@+id/listContests"
-        android:layout_width="0dp"
-        android:layout_height="950dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="24dp"
-        android:listSelector="@color/purple_200"
-        android:dividerHeight="2dp"
-        android:divider="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewSchool"
-        app:layout_constraintVertical_bias="0.279" />
 
     <TextView
         android:id="@+id/textView3"
@@ -66,4 +49,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="409dp"
+        android:layout_height="585dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewSchool" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

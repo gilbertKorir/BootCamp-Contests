@@ -12,11 +12,24 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hackathoncontests.R;
+import com.example.hackathoncontests.models.ContestResponse;
+
+import java.util.List;
 
 public class ContestAdapter extends RecyclerView.Adapter<ContestAdapter.DisplayViewHolder> {
+
+    private Context mContext;
+    private List<ContestResponse> contestResponseList;
+
+    public ContestAdapter(Context mContext, List<ContestResponse> contestResponseList) {
+        this.mContext = mContext;
+        this.contestResponseList = contestResponseList;
+    }
+
     @NonNull
     @Override
     public ContestAdapter.DisplayViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         return null;
     }
 
