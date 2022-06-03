@@ -1,6 +1,7 @@
 package com.example.hackathoncontests.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,7 +21,8 @@ import butterknife.ButterKnife;
 public class ContestsActivity extends AppCompatActivity {
     @BindView(R.id.viewName) TextView mViewname;
     @BindView(R.id.viewSchool) TextView mViewSchool;
-    @BindView(R.id.listContests) ListView mViewContests;
+    private ContestAdapter  mDisplayAdapter;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
 
 
     @Override

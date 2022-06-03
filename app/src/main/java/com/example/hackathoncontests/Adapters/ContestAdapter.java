@@ -9,12 +9,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hackathoncontests.R;
 import com.example.hackathoncontests.models.ContestResponse;
 
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class ContestAdapter extends RecyclerView.Adapter<ContestAdapter.DisplayViewHolder> {
 
@@ -29,8 +33,9 @@ public class ContestAdapter extends RecyclerView.Adapter<ContestAdapter.DisplayV
     @NonNull
     @Override
     public ContestAdapter.DisplayViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_display, parent, false);
+        DisplayViewHolder displayViewHolder = new DisplayViewHolder(view);
+        return displayViewHolder;
     }
 
     @Override
@@ -40,12 +45,27 @@ public class ContestAdapter extends RecyclerView.Adapter<ContestAdapter.DisplayV
 
     @Override
     public int getItemCount() {
-        return 0;
+        return contestResponseList.size();
     }
 
     public class DisplayViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.mycard) CardView mCard;
+        @BindView(R.id.nameView) TextView mName;
+        @BindView(R.id.url) TextView mUrl;
+        @BindView(R.id.startView) TextView mStart;
+        @BindView(R.id.endView) TextView mEnd;
+
         public DisplayViewHolder(@NonNull View itemView) {
             super(itemView);
+            ButterKnife.bind(this, itemView);
+            mContext = itemView.getContext();
+        }
+        public void bindCountry(ContestResponse contestResponse){
+            mName.setText(contestResponse.getName());
+            mUrl.setText(contestResponse.getUrl());
+            mStart.setText(contestResponse.getStartTime());
+            mEnd.setText(contestResponse.getEndTime());
+
         }
     }
 }
